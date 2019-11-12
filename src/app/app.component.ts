@@ -9,4 +9,8 @@ export class AppComponent {
   title = 'democomtemp';
 
   mySecond: number;
+
+  showAlert() {
+    alert('Het gio');
+  }
 }

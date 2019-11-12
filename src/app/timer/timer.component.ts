@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 const DEFAULT_SECOND = 10;
 
@@ -9,6 +9,8 @@ const DEFAULT_SECOND = 10;
 })
 export class TimerComponent {
   private _seconds = DEFAULT_SECOND;
+
+  @Output() finish = new EventEmitter();
 
   @Input()
   set seconds(value: any) {
@@ -31,6 +33,7 @@ export class TimerComponent {
         this._seconds--;
       } else {
         this.stopTimer();
+        this.finish.emit();
       }
     }, 1000 );
   }

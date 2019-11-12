@@ -1,5 +1,7 @@
+<app-message></app-message>
+
 <input name="mySecond" [(ngModel)]="mySecond" />
 
 <br>
 
-<app-timer [seconds]="mySecond"></app-timer>
+<app-timer [seconds]="mySecond" (finish)="showAlert()" ></app-timer>
